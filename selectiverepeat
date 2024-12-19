@@ -1,0 +1,35 @@
+#include <stdio.h> 
+#include<string.h> 
+int main() 
+{ 
+ 
+ int w, frames, i, g; 
+ printf(" enter no of frames: "); 
+ scanf("%d", &frames); 
+ for(i = 1;i<=frames;i++){ 
+ printf("sender: frame %d transmitted\n", i); 
+ 
+ } 
+ printf("Enter last recieved act: "); 
+ 
+ int ac; 
+ scanf("%d",&ac); 
+ for(i =0;i<ac;i++){ 
+ printf("reciever: frame %d recieved\n", i); 
+ 
+ } 
+ int lastr = ac; 
+ while(ac != frames){ 
+ printf(" sender: retransmitting %d frames\n",ac+1); 
+ printf("enter last ac: "); 
+ scanf("%d", &ac); 
+ for(i = lastr+1;i<=ac;i++){ 
+ 
+ printf("reciever : frame %d recieved\n",i); 
+ lastr = ac; 
+ } 
+ 
+ } 
+ 
+ 
+ return 0;
